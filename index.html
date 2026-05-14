@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORTAI | Dark Cinema Horror Assets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rojo-fort: #cc0000;
+            --amarillo-oscuro: #b8860b; /* Dark Goldenrod */
+            --negro-fondo: #050505;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--negro-fondo);
+            color: var(--amarillo-oscuro);
+            font-family: 'Oswald', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- PÁGINA 1: ENTRADA --- */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Gargole.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Posiciona el título abajo para no tapar los ojos */
+            align-items: center;
+            padding-bottom: 10vh;
+            text-align: center;
+        }
+
+        h1.main-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(4rem, 15vw, 10rem);
+            color: var(--rojo-fort);
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+        }
+
+        .hero-sub {
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        nav.main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            background: transparent;
+            border: 1px solid var(--amarillo-oscuro);
+            color: var(--amarillo-oscuro);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--rojo-fort);
+            color: white;
+            border-color: var(--rojo-fort);
+        }
+
+        /* --- PÁGINA 2: INFO --- */
+        section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--rojo-fort);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 40px;
+            border-left: 3px solid var(--rojo-fort);
+        }
+
+        .feature-card h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        /* --- PÁGINA 3: GALERÍA IMÁGENES --- */
+        #gallery {
+            text-align: center;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .media-grid img, .media-grid video {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: 0.5s;
+            border: 1px solid #222;
+        }
+
+        .media-grid img:hover, .media-grid video:hover {
+            filter: grayscale(0%) brightness(1.2);
+            border-color: var(--rojo-fort);
+        }
+
+        /* --- PÁGINA 5: THE ARSENAL & PACKS --- */
+        #packs {
+            text-align: center;
+        }
+
+        .arsenal-title {
+            color: var(--rojo-fort);
+            font-family: 'Cinzel', serif;
+            font-size: 5rem;
+            margin-bottom: 10px;
+        }
+
+        .packs-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pack-card {
+            background: #111;
+            padding: 40px 20px;
+            width: 350px;
+            border: 1px solid #222;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .pack-card:hover {
+            border-color: var(--rojo-fort);
+            transform: translateY(-10px);
+        }
+
+        .sticker {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--rojo-fort);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .pack-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+            background: #000;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="home">
+        <h1 class="main-title">FORTAI</h1>
+        <p class="hero-sub">DARK CINEMA ASSETS - 4K horror content creaction</p>
+        <nav class="main-nav">
+            <a href="#home" class="nav-btn">HOME</a>
+            <a href="#gallery" class="nav-btn">Gallery</a>
+            <a href="#assets" class="nav-btn">Assets</a>
+            <a href="#packs" class="nav-btn">Packs</a>
+        </nav>
+    </header>
+
+    <section id="assets">
+        <h2 class="section-title">USED BY PRO EDITORS WORLDWIDE</h2>
+        <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">91 Assets PRO. One Download. Instant Results.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>DARK CINEMA 4K</h3>
+                <p>Realistic renders for horror, sci-fi & dark fantasy. Engineered for high-end cinematic impact.</p>
+            </div>
+            <div class="feature-card">
+                <h3>NO RENDERING NEEDED</h3>
+                <p>.PNG + .MP4 with alpha channels. Drag and drop in CapCut, Premiere, DaVinci Resolve.</p>
+            </div>
+            <div class="feature-card">
+                <h3>LICENSE TO PROFIT</h3>
+                <p>Use in monetized content, ads & client projects. Full commercial freedom. No credit required.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">VISUAL ARTIFACTS</h2>
+        <p>Premium stills for high-impact horror thumbnails and social media storytelling.</p>
+        <div class="media-grid">
+            <img src="Asmondeus.jpg" alt="Belial Rojo">
+            <img src="Creepy Clown.jpg" alt="Payaso">
+            <img src="Alien.jpeg" alt="Alien">
+            <img src="Wendigo Bload.png" alt="Wendigo">
+            <img src="Black Men.jpg" alt="Black Men">
+            <img src="Gargola 1.jpg" alt="Gargola 1">
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">MOTION GENESIS</h2>
+        <p>Dynamic 4K assets designed for viral reels and TikTok atmosphere.</p>
+        <div class="media-grid">
+            <video src="Ready to Horror.mp4" controls loop muted></video>
+            <video src="The Dark Shadow.mp4" controls loop muted></video>
+            <video src="Satanic.mp4" controls loop muted></video>
+        </div>
+    </section>
+
+    <section id="packs">
+        <h2 class="arsenal-title">THE ARSENAL</h2>
+        <p style="font-size: 1.5rem;">Pick your weapon. Dominate the niche.</p>
+
+        <div class="packs-container">
+            <div class="pack-card">
+                <p style="color: var(--rojo-fort);">Entry level</p>
+                <h3 class="pack-title">Started pack</h3>
+                <ul style="list-style: none; margin-bottom: 30px; text-align: left; padding-left: 20px;">
+                    <li>• 13 Master Files</li>
+                    <li>• Basic Motion Assets</li>
+                    <li>• Starter Guide</li>
+                </ul>
+                <script src="https://www.paypal.com/sdk/js?client-id=BAAPwNWtnVGg14Ajn1LbAmOXk6dPIJWSPvEae6wZHZ_QG_S6nRxsVVKYXyoq5EXvpzOChR9-iH94cHCKD0&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+                <div id="paypal-container-DES6Y6RJDPS8C"></div>
+                <script>
+                  paypal.HostedButtons({
+                    hostedButtonId: "DES6Y6RJDPS8C",
+                  }).render("#paypal-container-DES6Y6RJDPS8C")
+                </script>
+            </div>
+
+            <div class="pack-card" style="border-color: var(--rojo-fort);">
+                <div class="sticker">BEST VALUE MOST Popular</div>
+                <p style="color: var(--rojo-fort);">Professional</p>
+                <h3 class="pack-title">Basic Pack</h3>
+                <ul style="list-style: none; margin-bottom: 30px; text-align: left; padding-left: 20px;">
+                    <li>• 41 Master Files</li>
+                    <li>• Viral Hook Formula</li>
+                    <li>• Full HD Motion Library</li>
+                </ul>
+                <div id="paypal-container-2XEPZ95VQCYXY"></div>
+                <script>
+                paypal.HostedButtons({
+                hostedButtonId: "2XEPZ95VQCYXY",
+                }).render("#paypal-container-2XEPZ95VQCYXY")
+                </script>
+            </div>
+
+            <div class="pack-card">
+                <p style="color: var(--rojo-fort);">Elite</p>
+                <h3 class="pack-title">Premium Pack</h3>
+                <ul style="list-style: none; margin-bottom: 30px; text-align: left; padding-left: 20px;">
+                    <li>• 91 Master Files</li>
+                    <li>• The Secret Formula</li>
+                    <li>• VIP Asset Access</li>
+                </ul>
+                <div id="paypal-container-NZAFZVZFA2H3Q"></div>
+                <script>
+                paypal.HostedButtons({
+                hostedButtonId: "NZAFZVZFA2H3Q",
+                }).render("#paypal-container-NZAFZVZFA2H3Q")
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="copyright">
+            © 2026 FORTAI. ALL RIGHTS RESERVED. ALL DIGITAL ASSETS, INCLUDING IMAGES, VIDEOS, AND GUIDES, ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAWS. UNAUTHORIZED REDISTRIBUTION, RESALE, OR PIRACY OF THESE MATERIALS IS STRICTLY PROHIBITED AND WILL RESULT IN LEGAL ACTION.
+        </p>
+    </footer>
+
+</body>
+</html>
