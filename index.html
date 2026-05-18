@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORTAI - Dark Cinema Assets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset de Estilos Globales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #000000;
+            color: #d4af37; /* Amarillo Oscuro / Oro */
+            font-family: 'Cinzel', Georgia, serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            color: #ff0000; /* Rojo Intenso */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p, li {
+            font-size: 1.05rem;
+            color: #d4af37; 
+            line-height: 1.6;
+        }
+        
+        /* PÁGINA 1: Entrada / Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 70%, #000000 100%), url('Gargole.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero-title-wrapper {
+            margin-top: 20px; /* Eleva el título al máximo para no tapar los ojos de la gárgola */
+        }
+        .hero-section h1 {
+            font-size: 7.5rem;
+            font-weight: 900;
+            line-height: 1;
+            text-shadow: 0 0 40px rgba(255, 0, 0, 0.7);
+            margin-bottom: 5px;
+        }
+        .hero-bottom-wrapper {
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .hero-section h2 {
+            font-size: 1.9rem;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .btn-nav {
+            background: transparent;
+            border: 2px solid #ff0000;
+            color: #ffffff;
+            padding: 14px 40px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .btn-nav:hover {
+            background: #ff0000;
+            box-shadow: 0 0 25px #ff0000;
+            color: #000000;
+            transform: scale(1.05);
+        }
+
+        /* PÁGINA 2: Características / Features */
+        .features-section {
+            padding: 120px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .features-section h3 {
+            color: #ffffff;
+            font-size: 1.6rem;
+            margin-bottom: 60px;
+            letter-spacing: 4px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+        .feature-card {
+            background: rgba(8, 8, 8, 0.95);
+            border: 1px solid #151515;
+            padding: 45px 30px;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: #ff0000;
+            transform: translateY(-5px);
+        }
+        .feature-card h4 {
+            color: #ff0000;
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* PÁGINA 3 y 4: Galerías (Imágenes y Videos) */
+        .gallery-container {
+            padding: 100px 20px;
+            background-color: #020202;
+            text-align: center;
+        }
+        .gallery-container h2 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        }
+        .gallery-container .section-desc {
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .media-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .media-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #000000;
+            border: 2px solid #111111;
+        }
+        .media-wrapper img, .media-wrapper video {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .media-wrapper:hover img, .media-wrapper:hover video {
+            transform: scale(1.04);
+        }
+        .media-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.95));
+            padding: 25px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        /* PÁGINA 5: Arsenal & Packs de Precios */
+        .arsenal-section {
+            padding: 120px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .arsenal-section h2 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+        }
+        .arsenal-section .arsenal-subtitle {
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 80px;
+            letter-spacing: 1px;
+        }
+        .packs-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 35px;
+            align-items: start;
+        }
+        .pack-card {
+            background: #050505;
+            border: 2px solid #151515;
+            padding: 50px 30px 40px 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 620px;
+            transition: all 0.3s ease;
+        }
+        .pack-card.premium-choice {
+            border-color: #ff0000;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
+        }
+        .hot-sticker {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff0000;
+            color: #ffffff;
+            padding: 6px 20px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            box-shadow: 0 0 15px #ff0000;
+        }
+        .pack-card h3 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .pack-card h4 {
+            font-size: 2.3rem;
+            color: #ff0000;
+            margin-bottom: 5px;
+        }
+        .pack-price {
+            font-size: 1.6rem;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .pack-card ul {
+            list-style: none;
+            margin: 15px 0 35px 0;
+            text-align: left;
+            border-top: 1px solid #151515;
+            padding-top: 25px;
+        }
+        .pack-card ul li {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            color: #d4af37;
+        }
+        .pack-card ul li::before {
+            content: "💀 ";
+            font-size: 0.85rem;
+            margin-right: 8px;
+        }
+        .paypal-integration-box {
+            margin-top: auto;
+            min-height: 50px;
+        }
+
+        /* Footer & Créditos */
+        .main-footer {
+            background: #000000;
+            padding: 80px 20px 40px 20px;
+            text-align: center;
+            border-top: 1px solid #111111;
+        }
+        .main-footer h3 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+        .main-footer p {
+            font-size: 1.05rem;
+            color: #ffffff;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+        .legal-copyright {
+            font-size: 0.8rem;
+            color: #444444;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+            letter-spacing: 1px;
+        }
+
+        /* Ajustes Mobile Responsivo */
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 4.2rem; }
+            .hero-section h2 { font-size: 1.4rem; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 280px; margin: 0 auto; }
+            .media-layout { grid-template-columns: 1fr; }
+            .media-wrapper img, .media-wrapper video { height: 380px; }
+            .arsenal-section h2 { font-size: 2.8rem; }
+            .pack-card { min-height: auto; margin-bottom: 20px; }
+        }
+    </style>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAPwNWtnVGg14Ajn1LbAmOXk6dPIJWSPvEae6wZHZ_QG_S6nRxsVVKYXyoq5EXvpzOChR9-iH94cHCKD0&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="hero-title-wrapper">
+            <h1>FORTAI</h1>
+        </div>
+        <div class="hero-bottom-wrapper">
+            <h2>DARK CINEMA ASSETS</h2>
+            <p>4K Horror Content Creation</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn-nav">Gallery</a>
+                <a href="#assets" class="btn-nav">Assets</a>
+                <a href="#packs" class="btn-nav">Packs</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="assets" class="features-section">
+        <h3>USED BY PRO EDITORS WORLDWIDE</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>DARK CINEMA 4K</h4>
+                <p>91 Assets PRO. One Download. Instant Results. Realistic renders designed specifically for horror, sci-fi & dark fantasy creators.</p>
+            </div>
+            <div class="feature-card">
+                <h4>NO RENDERING NEEDED</h4>
+                <p>.PNG + .MP4 format pre-keyed with native alpha channel transparency. Drag, drop and dominate instantly in CapCut, Premiere, and DaVinci.</p>
+            </div>
+            <div class="feature-card">
+                <h4>LICENSE TO PROFIT</h4>
+                <p>Unrestricted commercial rights. Use elements freely across all your monetized content, social ads & client projects. No credit required.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-container">
+        <h2>IMAGE GALLERY</h2>
+        <p class="section-desc">Ultra-detailed horror keyframes and visual elements</p>
+        <div class="media-layout">
+            <div class="media-wrapper">
+                <img src="Asmondeus.jpg" alt="Belial Rojo">
+                <div class="media-caption">Belial Rojo</div>
+            </div>
+            <div class="media-wrapper">
+                <img src="Creepy Clown.jpg" alt="Payaso">
+                <div class="media-caption">Creepy Clown</div>
+            </div>
+            <div class="media-wrapper">
+                <img src="Alien.jpeg" alt="Alien">
+                <div class="media-caption">Xenomorph Alien</div>
+            </div>
+            <div class="media-wrapper">
+                <img src="Wendigo Bload.png" alt="Wendigo">
+                <div class="media-caption">Wendigo Blood</div>
+            </div>
+            <div class="media-wrapper">
+                <img src="Black Men.jpg" alt="Black Men">
+                <div class="media-caption">Black Men Cult</div>
+            </div>
+            <div class="media-wrapper">
+                <img src="Gargola 1.jpg" alt="Gargole 1">
+                <div class="media-caption">Gargoyle 1</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-container" style="background-color: #000000;">
+        <h2>MOTION OVERLAYS</h2>
+        <p class="section-desc">Cinematic looped motion graphics for Instagram and TikTok layouts</p>
+        <div class="media-layout">
+            <div class="media-wrapper">
+                <video src="Gargoyle Sentinel of the Abyss.mp4" autoplay loop muted playsinline></video>
+                <div class="media-caption">Gargoyle: Sentinel of the Abyss</div>
+            </div>
+            <div class="media-wrapper">
+                <video src="The Red Guardian.mp4" autoplay loop muted playsinline></video>
+                <div class="media-caption">The Red Guardian</div>
+            </div>
+            <div class="media-wrapper">
+                <video src="The Dark Shadow.mp4" autoplay loop muted playsinline></video>
+                <div class="media-caption">The Dark Shadow</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packs" class="arsenal-section">
+        <h2>THE ARSENAL</h2>
+        <p class="arsenal-subtitle">Pick your weapon. Dominate the niche.</p>
+        
+        <div class="packs-layout">
+            <div class="pack-card">
+                <div>
+                    <h3>Entry Level</h3>
+                    <h4>Starter Pack</h4>
+                    <div class="pack-price">7 USD</div>
+                    <ul>
+                        <li>3 Motion Assets</li>
+                        <li>3 Images AI</li>
+                        <li>Tutorial Capcut</li>
+                        <li><strong>Total: 13 Archivos</strong></li>
+                    </ul>
+                </div>
+                <div class="paypal-integration-box">
+                    <div id="paypal-container-XPRHAWDKJNUKW"></div>
+                </div>
+            </div>
+
+            <div class="pack-card premium-choice">
+                <div class="hot-sticker">BEST VALUE MOST POPULAR</div>
+                <div>
+                    <h3>Professional</h3>
+                    <h4>Basic Pack</h4>
+                    <div class="pack-price">19 USD</div>
+                    <ul>
+                        <li>10 Motion Assets</li>
+                        <li>15 Images AI</li>
+                        <li>Horror Sounds</li>
+                        <li>Terror Captions</li>
+                        <li>Tutorial Capcut</li>
+                        <li>BONUS and more...</li>
+                        <li><strong>Total: 41 Archivos</strong></li>
+                    </ul>
+                </div>
+                <div class="paypal-integration-box">
+                    <div id="paypal-container-EUJ8FEZZAABGW"></div>
+                </div>
+            </div>
+
+            <div class="pack-card">
+                <div>
+                    <h3>Elite</h3>
+                    <h4>Premium Pack</h4>
+                    <div class="pack-price">37 USD</div>
+                    <ul>
+                        <li>10 Motion Assets</li>
+                        <li>15 Images AI</li>
+                        <li>Horror Sounds</li>
+                        <li>Terror Captions</li>
+                        <li>Tutorial Capcut</li>
+                        <li>Premium Guide</li>
+                        <li>Prompts AI</li>
+                        <li>BONUS and more...</li>
+                        <li><strong>Total: 91 Archivos</strong></li>
+                    </ul>
+                </div>
+                <div class="paypal-integration-box">
+                    <div id="paypal-container-2B2CFDTKB6FZE"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <h3>Dominate the Algorithm</h3>
+        <p>Instant Download. Commercial Use. 24/7 Support @fortai1991</p>
+        <div class="legal-copyright">
+            &copy; 2026 FORTAI. All rights reserved. All visual assets, motion renders, and templates included within these digital bundles are protected under international intellectual property and copyright regulations. Digital distribution, sharing, or unauthorized reselling of these compilations is strictly prohibited under legal prosecution.
+        </div>
+    </footer>
+
+    <script>
+        // Render Container Pack 1
+        paypal.HostedButtons({
+            hostedButtonId: "XPRHAWDKJNUKW",
+        }).render("#paypal-container-XPRHAWDKJNUKW");
+
+        // Render Container Pack 2
+        paypal.HostedButtons({
+            hostedButtonId: "EUJ8FEZZAABGW",
+        }).render("#paypal-container-EUJ8FEZZAABGW");
+
+        // Render Container Pack 3
+        paypal.HostedButtons({
+            hostedButtonId: "2B2CFDTKB6FZE",
+        }).render("#paypal-container-2B2CFDTKB6FZE");
+    </script>
+
+</body>
+</html>
